@@ -1,9 +1,9 @@
 # Databricks notebook source
 # MAGIC %md
-# MAGIC # Build Nationality Region Reference
+# MAGIC ### Building Nationality Region Reference
 # MAGIC
-# MAGIC 1. Create a dataframe with list of nationalities and corresponding geographic regions
-# MAGIC 1. Write the dataframe to gold `ref_nationality_region` table
+# MAGIC 1. Created a dataframe with list of nationalities and corresponding geographic regions
+# MAGIC 1. Wrote the dataframe to gold `ref_nationality_region` table
 # MAGIC
 
 # COMMAND ----------
@@ -17,11 +17,6 @@ target_table = f"{catalog_name}.{gold_schema}.ref_nationality_region"
 # COMMAND ----------
 
 from pyspark.sql import functions as F
-
-# COMMAND ----------
-
-# MAGIC %md
-# MAGIC #### Step 1 - Create a dataframe with list of nationalities and corresponding geographic regions
 
 # COMMAND ----------
 
@@ -90,11 +85,6 @@ nationality_region_map_rows = [
 ref_nationality_region_df = spark.createDataFrame(nationality_region_map_rows)
 
 
-
-# COMMAND ----------
-
-# MAGIC %md
-# MAGIC #### Step 2 - Write the dataframe to the `gold` `ref_nationality_region` table
 
 # COMMAND ----------
 
